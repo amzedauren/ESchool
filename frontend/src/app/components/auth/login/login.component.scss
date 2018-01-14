@@ -1,0 +1,20 @@
+:host {
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    justify-content: center;   
+    align-items: center;      
+    form {
+        width: 40%;
+        height: 60%;
+        padding: 40px;
+        border: 1px solid #cccccc;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;        
+        align-items: center;
+        mat-form-field {
+            width: 50%;
+        }
+    }
+}

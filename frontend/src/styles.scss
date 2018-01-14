@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html,body {
+    padding: 0;
+    margin: 0;
+}
+
+.mat-tab-labels {
+    display: flex;                            
+    justify-content: center;
+}
+
+.mat-tab-body-wrapper {
+    mat-tab-body{
+        display: flex;
+        justify-content: center;        
+        display: flex;
+        flex-direction: column;
+        .images {
+            display: flex;
+            flex-flow: row;
+            flex-wrap: wrap;
+            flex: 1 0 auto;
+        }
+    }
+    
+}
+
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}

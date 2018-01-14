@@ -1,0 +1,81 @@
+<div class="row">
+  <mat-toolbar>
+    <span>Students</span>
+  </mat-toolbar>
+
+</div>
+
+
+<!-- <mat-divider></mat-divider> -->
+
+<div class="row">
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Add new student
+        </mat-panel-title>
+        <mat-panel-description>
+          Type student's name, email and phone number
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-form-field>
+        <input matInput placeholder="First name" [(ngModel)]="newStudent.name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="email" [(ngModel)]="newStudent.email">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="phone number" [(ngModel)]="newStudent.phoneNumber">
+      </mat-form-field>
+      <button mat-button (click)="add()">add</button>
+
+    </mat-expansion-panel>
+
+  </mat-accordion>
+</div>
+
+
+<div class="row">
+  <div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource">
+
+      <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+
+      <!-- Name Column -->
+      <!-- <ng-container matColumnDef="email">
+              <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+            </ng-container> -->
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="phone number">
+        <mat-header-cell *matHeaderCellDef>phone number </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.phoneNumber}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef>Action </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          
+          <button mat-button (click)="addToGroupDialog(element)">add</button>
+          <button mat-button (click)="removeFromGroupDialog(element)">remove</button>
+        </mat-cell>
+      </ng-container>
+
+
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+</div>

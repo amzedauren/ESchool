@@ -1,0 +1,17 @@
+
+<p>Select group!</p>
+
+<mat-divider></mat-divider>
+
+<mat-form-field>
+  <mat-select [(value)]="selected">
+    <mat-option>None</mat-option>
+
+    <mat-option *ngFor="let i of groups"  value="{{i.id}}">{{i.groupName}}</mat-option>
+
+  </mat-select>
+</mat-form-field> 
+
+<button mat-button (click)="remove()"> remove</button> 
+<p style="color:red">{{status}}</p>
+

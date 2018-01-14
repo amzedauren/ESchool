@@ -1,0 +1,7 @@
+backend/.idea/
+backend/target/
+frontend/dist/
+frontend/node_modules/
+frontend/.vscode/
+frontend/.editorconfig
+

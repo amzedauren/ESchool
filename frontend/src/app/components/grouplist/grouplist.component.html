@@ -1,0 +1,74 @@
+<div class="row">
+  <mat-toolbar>
+    <span>Groups</span>
+  </mat-toolbar>
+</div>
+
+
+
+
+<!-- <mat-list role="list">
+  <mat-list-item role="listitem" *ngFor="let group of groups">{{group.groupName}}
+    
+    <mat-list role="list">
+      <mat-list-item role="listitem" *ngFor="let student of group.students">{{student.name}}</mat-list-item>
+    </mat-list>
+  </mat-list-item>
+</mat-list> -->
+
+<div class="row">
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Create new Group
+        </mat-panel-title>
+        <mat-panel-description>
+          Type goup's name and teacher
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-form-field>
+        <input matInput placeholder="Group name" [(ngModel)]="groupName">
+      </mat-form-field>
+
+      <mat-form-field>
+          <mat-select [(value)]="selected">
+            <mat-option>None</mat-option>
+        
+            <mat-option *ngFor="let i of users"  value="{{i.id}}">{{i.name}}</mat-option>
+        
+          </mat-select>
+        </mat-form-field>
+
+
+      <button mat-button (click)="add()">add</button>
+
+    </mat-expansion-panel>
+
+  </mat-accordion>
+</div>
+
+
+<div class="row">
+
+  <mat-accordion >
+    <mat-expansion-panel *ngFor="let group of groups">
+      <mat-expansion-panel-header>
+        <mat-panel-title style="width:50%">
+          {{group.groupName}}
+        </mat-panel-title>
+        <mat-panel-description>
+
+          <span>teacher: {{group.teacher.name}}</span>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let student of group.students">{{student.name}}</mat-list-item>
+      </mat-list>
+
+    </mat-expansion-panel>
+
+  </mat-accordion>
+</div>
